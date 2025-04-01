@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="./style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bbd7108ae1.js" crossorigin="anonymous"></script>
+    <script src="app.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+        </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Cars</title>
+</head>
+<body>
+    <div id="app">
+        <div class="navbar2">
+            <div class="nav__wrapper2">
+                <div class="nav__logo2">
+                    <img src="https://dev.d24jig8s1lr7n9.amplifyapp.com/img/whitelogo.39850b27.png" alt="" class="logo2">
+                </div>
+                <div class="nav__links2">
+                    <a href="./index.html" class="link router-link-exact-active2">
+                        Home
+                    </a>
+                    <a href="./car.html" class="link2">
+                        Find your car
+                    </a>
+                    <a href="" class="nav__link-btn2">Contact</a>
+                </div>
+                </div>
+                <div class="content__wrapper2">
+                    <h1 class="page__title">Browse our cars</h1>
+                    <div class="input__wrapper2">
+                        <input type="text"   onchange="testFunction(event)"     placeholder="Search by Make, Model or Name" class="input__cars">
+                        <button class="search__wrapper2">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+            </div>
+            <div class="overlay">
+            </div>
+        </div>
+        <section id="search">
+            <div id="filter" class="filter-wrapper">
+                <h1 class="search-info">
+                    <span class="black-text">Search results:</span>
+                </h1>
+                <div class="price__filter">
+                    <h2 class="search-text">
+                        <span class="black-text__second">Price range:</span>
+                        $0 to $100,000
+                    </h2>
+                    <div class="slider-wrapper">
+                        <div class="slider__runway">
+                            <div class="slider__bar" style="width: 100%; left: 0%;"></div>
+                            <div tabindex="0" class="slider__button-wrapper" style="left: 0%;">
+                                <div class="slider__button" tabindex="0"></div>
+                            </div>
+                            <div tabindex="0" class="slider__button-wrapper2" style="left: 100;">
+                                <div class="slider__button2" tabindex="0"></div>
+                            </div>
+                            <div class="slider__stop" style="left: 0%;"></div>
+                            <div class="slider__stop" style="left: 100%;"></div>
+                        </div>
+                        <div class="slider__marks">
+                            <h1 class="slider__marks-text">$0   
+                            </h1>
+                            <h2 class="slider__marks-text2">$100,000</div>
+                            </h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="movies">
+            <div class="movies__wrapper">
+            <div class="movie__container">
+                <h1 class="movie-title">The Fast and Furious</h1>
+                <p class="movie-year">Year: <span>2001</span></p>
+                <p class="movie-imdbid">IMDB ID: <span>tt0232500</span></p>
+                <img class="movie__img" src="https://m.media-amazon.com/images/M/MV5BZGRiMDE1NTMtMThmZS00YjE4LWI1ODQtNjRkZGZlOTg2MGE1XkEyXkFqcGc@._V1_SX300.jpg" alt="">
+            </div>
+
+            <div class="movie__container">
+                <h1 class="movie-title">Fast & Furious 6</h1>
+                <p class="movie-year">Year: <span>2013</span></p>
+                <p class="movie-imdbid">IMDB ID: <span>tt1905041</span></p>
+                <img class="movie__img" src="https://m.media-amazon.com/images/M/MV5BMTM3NTg2NDQzOF5BMl5BanBnXkFtZTcwNjc2NzQzOQ@@._V1_SX300.jpg" alt="">
+            </div>
+
+            <div class="movie__container">
+                <h1 class="movie-title">Fast Five</h1>
+                <p class="movie-year">Year: <span>2011</span></p>
+                <p class="movie-imdbid">IMDB ID: <span>tt1596343</span></p>
+                <img class="movie__img" src="https://m.media-amazon.com/images/M/MV5BMTUxNTk5MTE0OF5BMl5BanBnXkFtZTcwMjA2NzY3NA@@._V1_SX300.jpg" alt="">
+            </div>
+
+            <div class="movie__container">
+                <h1 class="movie-title">Fast and Furious</h1>
+                <p class="movie-year">Year: <span>2009</span></p>
+                <p class="movie-imdbid">IMDB ID: <span>tt1013752</span></p>
+                <img class="movie__img" src="https://m.media-amazon.com/images/M/MV5BM2Y1YzhkNzUtMzhmZC00OTFkLWJjZDktMWYzZmQ0Y2Y5ODcwXkEyXkFqcGc@._V1_SX300.jpg" alt="">
+            </div>
+
+            <div class="movie__container">
+                <h1 class="movie-title">The Fast and the Furious: Tokyo Drift</h1>
+                <p class="movie-year">Year: <span>2006</span></p>
+                <p class="movie-imdbid">IMDB ID: <span>tt0463985</span></p>
+                <img class="movie__img" src="https://m.media-amazon.com/images/M/MV5BMTQ2NTMxODEyNV5BMl5BanBnXkFtZTcwMDgxMjA0MQ@@._V1_SX300.jpg" alt="">
+            </div>
+
+            <div class="movie__container">
+                <h1 class="movie-title">2 Fast 2 Furious</h1>
+                <p class="movie-year">Year: <span>2003</span></p>
+                <p class="movie-imdbid">IMDB ID: <span>tt0322259</span></p>
+                <img class="movie__img" src="https://m.media-amazon.com/images/M/MV5BOTQzYzEwNWMtOTAwYy00YWYwLWE1NTEtZTkxOGQxZTM0M2VhXkEyXkFqcGc@._V1_SX300.jpg" alt="">
+            </div>
+
+            <div class="movie__container">
+                <h1 class="movie-title">Fast & Furious Presents: Hobbs & Shaw</h1>
+                <p class="movie-year">Year: <span>2019</span></p>
+                <p class="movie-imdbid">IMDB ID: <span>tt6806448</span></p>
+                <img class="movie__img" src="https://m.media-amazon.com/images/M/MV5BNmU4OTA5NGYtMTFjMS00MzgxLWFjNTMtYjdlMThlYzc4M2M4XkEyXkFqcGc@._V1_SX300.jpg" alt="">
+            </div>
+
+            <div class="movie__container">
+                <h1 class="movie-title">F9: The Fast Saga</h1>
+                <p class="movie-year">Year: <span>2021</span></p>
+                <p class="movie-imdbid">IMDB ID: <span>tt5433138</span></p>
+                <img class="movie__img" src="https://m.media-amazon.com/images/M/MV5BODJkMTQ5ZmQtNzQxYy00ZWNlLWI0ZGYtYjU1NzdiMjcyNDRmXkEyXkFqcGc@._V1_SX300.jpg" alt="">
+            </div>
+
+            <div class="movie__container">
+                <h1 class="movie-title">Fast X</h1>
+                <p class="movie-year">Year: <span>2023</span></p>
+                <p class="movie-imdbid">IMDB ID: <span>tt5433140</span></p>
+                <img class="movie__img" src="https://m.media-amazon.com/images/M/MV5BYzEwZjczOTktYzU1OS00YjJlLTgyY2UtNWEzODBlN2RjZDEwXkEyXkFqcGc@._V1_SX300.jpg" alt="">
+            </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
