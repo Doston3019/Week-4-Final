@@ -1,8 +1,9 @@
-//API 1: https://omdbapi.com/?s=fast&apikey=1de8a72c
+//API 1: https://omdbapi.com/?s=searchValue&apikey=1de8a72c
 
 function handleSearch(event) {
+    //const searchValue = event.target.value
+    const input = document.getElementsByClassName("search-input")[0];
     const searchValue = input.value;
-    const input = document.getElementsByClassName(".search-input");
     if(event.type === 'change'){
         console.log("Change event triggered with value:", searchValue);
     }
@@ -18,6 +19,10 @@ async function fetchData(searchValue) {
     const res = await fetch(`https://omdbapi.com/?s=${searchValue}&apikey=1de8a72c`)
     const data = await res.json();
     console.log (data.Search);
+    if (!data.Search) {
+        moviesWrapper.innerHTML = "<p>No results found</p>";
+        return;
+    }
     moviesWrapper.innerHTML = data.Search.map((movie) => {
         return `<div class="movie__container">
                 <h1 class="movie-title">${movie.Title}</h1>
@@ -32,3 +37,4 @@ async function fetchData(searchValue) {
 }
 }
 
+document.querySelector(".search-button").addEventListener("click",handleSearch);

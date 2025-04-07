@@ -32,7 +32,7 @@
                     <h1 class="page__title">Browse our Movies</h1>
                     <div class="input__wrapper2">
                         <input type="text"   onchange="handleSearch(event)"     placeholder="Search by Make, Model or Name" class="search-input">
-                        <button class="search__wrapper2" onclick="loadingState(event)">
+                        <button class="not-loading2 search-button" onclick="loadingState(event)">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </div>
@@ -73,14 +73,26 @@
         </section>
         <div id="movies">
             <div class="movies__wrapper">
-            <div class="loading-state">
-                <svg class="spinner">
+            <div class="loading-state flex justify-center">
                     <i class="fa-solid fa-spinner"></i>
-                </svg>
             </div>
-
             </div>
         </div>
     </div>
+    <script>
+        document.getElementsByClassName('search-button').addEventListener('click',function(){
+            const loadingState = document.getElementByClassName('loading-state');
+            loadingState.style.display = 'block';
+            setTimeout(function(){
+                loadingState.style.display = 'none';
+            },2000);
+        });
+
+        window.addEventListener('load', function(){
+            const loadingState = document.getElementsByClassName('loading-state');
+            loadingState.style.display = 'none';
+        });
+
+    </script>
 </body>
 </html>

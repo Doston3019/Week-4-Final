@@ -37,8 +37,8 @@
                     <h2 class="subtitle">Find your Movies with <span class="purple">Blinker</span> </h2>
                 </div>
                 <div class="input__wrapper">
-                    <input type="text" placeholder="Search by Make or Name">
-                    <button class="not-loading">
+                    <input type="text"   onchange="handleSearch(event)"    placeholder="Search by Make or Name" class="search-input">
+                    <button class="not-loading search-button" onclick="loadingState(event)">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
@@ -47,5 +47,75 @@
             
         </div>
     </section>
+
+    <!-- Section for displaying movie search results -->
+
+<section class="movies__wrapper"></section>
+<script>
+
+function handleSearch(event) {
+const input = document.getElementsByClassName("search-input")[0];
+const searchValue = input.value;
+if (event.type === "change") {
+
+console.log("Change event triggered with value:", searchValue);
+
+} else if (event.type === "click") {
+
+console.log("Click event triggered with value:", searchValue);
+
+ }
+
+fetchData(searchValue);
+
+ }
+
+
+
+const moviesWrapper = document.querySelector(".movies__wrapper");
+async function fetchData(searchValue) {
+try {
+const res = await fetch(`https://omdbapi.com/?s=${searchValue}&apikey=1de8a72c`);
+const data = await res.json();
+console.log(data.Search);
+if (!data.Search) {
+moviesWrapper.innerHTML = "<p>No Results:</p>";
+return;
+}
+
+
+
+moviesWrapper.innerHTML = data.Search.map((movie) => {
+
+return `<div class="movie__container">
+
+ <h1 class="movie-title">${movie.Title}</h1>
+
+ <p class="movie-year">Year: <span>${movie.Year}</span></p>
+
+ <p class="movie-imdbid">IMDB ID: <span>${movie.imdbID}</span></p>
+
+ <img class="movie__img" src="${movie.Poster}" alt="">
+
+ </div>`;
+
+ }).join("");
+
+ } catch (err) {
+
+console.log(err);
+
+ }
+
+ }
+
+
+
+// Event listener for the search button
+
+document.querySelector(".search-button").addEventListener("click", handleSearch);
+
+</script>
+
 </body>
 </html>

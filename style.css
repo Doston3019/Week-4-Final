@@ -301,7 +301,7 @@ button:hover {
     display: flex;
 }
 
-.search__wrapper2 {
+.search-button {
     position: absolute;
     cursor: pointer;
     background-color: white;
@@ -582,19 +582,20 @@ span {
 }
 
 .loading-state {
-    margin: 100px 0;
-    width: 100%;
+    margin: 80px 0;
+    width: 300%;
+}
+
+.justify-center {
     justify-content: center !important;
-    align-items: center;
+}
+
+.flex {
     display: flex !important;
 }
 
-.spinner {
-    font-size: 30px;
-} 
-
 .fa-spinner {
-    display: inline-block;
+    display: none;
     animation: spin 1s linear infinite;
     font-size: 40px;
     color: rgb(96, 48, 177); 
