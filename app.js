@@ -1,18 +1,16 @@
 //API 1: https://omdbapi.com/?s=fast&apikey=1de8a72c
 
 function handleSearch(event) {
-    const searchValue = event.target.value;
+    const searchValue = input.value;
+    const input = document.getElementsByClassName(".search-input");
+    if(event.type === 'change'){
+        console.log("Change event triggered with value:", searchValue);
+    }
+    else if(event.type === 'click') {
+        console.log("Click event triggered with value:", searchValue);
+    }
     fetchData(searchValue);
 }
-
-function loadingState(event) {
-    const searchButton = document.getElementById('button');
-    const loadingIndicator = document.getElementsByClassName('fa-spinner')[0];
-    fetchData(searchButton);
-    fetchData(loadingIndicator);
-}
-
-loadingState();
 
 const moviesWrapper = document.querySelector(".movies__wrapper");
 async function fetchData(searchValue) {
